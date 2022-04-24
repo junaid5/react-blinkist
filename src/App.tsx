@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import LandingPage from './components/Pages/LandingPage';
+import Banner from './components/molecules/Banner/Banner'
+import Entrepreneurship from './components/Pages/Entrepreneurship';
+import BookDetail from './components/Pages/BookDetails/BookDetail';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
-function App() {
+const App=()=> {
+  console.log("hello")
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path='/' element={<LandingPage/>} />
+          <Route path='/entrepreneurship' element={<Entrepreneurship/>} />
+          <Route path='/BookDetail' element={<BookDetail/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
